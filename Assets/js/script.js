@@ -143,6 +143,14 @@ function getPasswordOptions() {
         'Click OK to confirm including *SPECIAL CHARACTERS*.'
     );
 
+    // Conditional statement to check if none of any characters were chosen by user. //
+    // Password generator ends if all four variables = false//
+    if (
+        hasNumericCharacters === false && hasLowerCaseCharacters === false && hasUpperCaseCharacters === false && hasSpecialCharacters === false
+    ) {
+        alert('Select at least one character type');
+        return;
+    }
 
 
 
