@@ -171,6 +171,17 @@ function getRandom(arr) {
     return randElement;
 }
 
+//Function to generate password with user input
+function generatePassword() {
+    var options = getPasswordOptions();
+    // Variable to store password as it's being concatenated
+    var result = [];
+
+    //Array to store types of characters to include in password
+    var possibleCharacters = [];
+
+    //
+}
 
 
 // Get references to the #generate element
