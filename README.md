@@ -28,3 +28,4 @@ ACCEPTANCE CRITERIA
 * WHEN the password is generated
 * THEN the password is either displayed in an alert or written to the page
 
+![Screen Shot Password Generator](https://user-images.githubusercontent.com/92004417/140689142-3da39efc-644d-4cf8-a52d-e45173b0a6c2.png)
