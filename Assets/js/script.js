@@ -206,11 +206,26 @@ function generatePassword() {
     //Conditional statement that adds array of special characters into array of possible characters
     //Push new random special character to guaranteedCharacters
     if (options.hasSpecialCharacters) {
-        possibleCharacters - possibleCharacters.concat(specialCharacters);
+        possibleCharacters = possibleCharacters.concat(specialCharacters);
         guaranteedCharacters.push(getRandom(specialCharacters));
     }
-}
 
+    // For loop to iterate over the password length from options object//
+    //Selecting random indices from array of possible characters & con
+    for (var i = 0; i <options.length; i++) {
+        var possibleCharacter = getRandom(possibleCharacters);
+
+        result.push(possibleCharacter);
+    }
+
+    // Mix in at least one of each guaranteed character in the result
+    for (var i = 0; i < guaranteedCharacters.length; i++) {
+        result[i] = guaranteedCharacters[i];
+    }
+
+    //Transform the result into a string and pass into writePassword
+    return result.join('');
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
