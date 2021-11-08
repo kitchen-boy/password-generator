@@ -5,7 +5,6 @@ var specialCharacters = [
     '+',
     '\\',
     '/',
-    ''',
     '!',
     '#',
     '$',
@@ -129,12 +128,12 @@ function getPasswordOptions() {
     )
 
     //Variable to store statement re: inclusion of lowercase characters
-    var hasLowerCaseCharacters = confirm(
+    var hasLowerCasedCharacters = confirm(
         'Click OK to confirm including lowercase CHARACTERS.'
     )
 
     //Variable to store statement re: inclusion of UPPERCASE characters
-    var hasUpperCaseCharacters = confirm(
+    var hasUpperCasedCharacters = confirm(
         'Click OK to confirm including UPPERCASE CHARACTERS.'
     );
 
@@ -146,7 +145,7 @@ function getPasswordOptions() {
     // Conditional statement to check if none of any characters were chosen by user. //
     // Password generator ends if all four variables = false//
     if (
-        hasNumericCharacters === false && hasLowerCaseCharacters === false && hasUpperCaseCharacters === false && hasSpecialCharacters === false
+        hasNumericCharacters === false && hasLowerCasedCharacters === false && hasUpperCasedCharacters === false && hasSpecialCharacters === false
     ) {
         alert('Select at least one character type');
         return;
@@ -156,8 +155,8 @@ function getPasswordOptions() {
     var passwordOptions = {
         length: length,
         hasNumericCharacters: hasNumericCharacters, 
-        hasLowerCaseCharacters: hasLowerCaseCharacters, 
-        hasUpperCaseCharacters: hasUpperCaseCharacters, 
+        hasLowerCasedCharacters: hasLowerCasedCharacters, 
+        hasUpperCasedCharacters: hasUpperCasedCharacters, 
         hasSpecialCharacters: hasSpecialCharacters
     };
     return passwordOptions;
@@ -180,7 +179,36 @@ function generatePassword() {
     //Array to store types of characters to include in password
     var possibleCharacters = [];
 
-    //
+    //Array to contain one of each type of chosen character to ensure each will be used
+    var guaranteedCharacters = [];
+
+    //Conditional statement that adds array of numeric characters into array of possible characters
+    //Push new random special character to guaranteedCharacters
+    if (options.hasNumericCharacters) {
+        possibleCharacters = possibleCharacters.concat(numericCharacters);
+        guaranteedCharacters.push(getRandom(numericCharacters));
+    }
+
+    // Conditional statement that adds array of lowercase characters into array of possible characters
+    // Push new random lower-cased character to guaranteedCharacters
+     if (options.hasLowerCasedCharacters) {
+        possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+        guaranteedCharacters.push(getRandom(lowerCasedCharacters));
+    }
+
+    // Conditional statement that adds array of uppercase characters into array of possible characters
+    //Push new random upper-cased character to guaranteedCharacters
+    if (options.hasUpperCasedCharacters) {
+        possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+        guaranteedCharacters.push(getRandom(upperCasedCharacters));
+    }
+
+    //Conditional statement that adds array of special characters into array of possible characters
+    //Push new random special character to guaranteedCharacters
+    if (options.hasSpecialCharacters) {
+        possibleCharacters - possibleCharacters.concat(specialCharacters);
+        guaranteedCharacters.push(getRandom(specialCharacters));
+    }
 }
 
 
