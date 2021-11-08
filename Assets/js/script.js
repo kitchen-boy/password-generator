@@ -152,6 +152,19 @@ function getPasswordOptions() {
         return;
     }
 
+    // Object to store user input
+    var passwordOptions = {
+        length: length,
+        hasNumericCharacters: hasNumericCharacters, 
+        hasLowerCaseCharacters: hasLowerCaseCharacters, 
+        hasUpperCaseCharacters: hasUpperCaseCharacters, 
+        hasSpecialCharacters: hasSpecialCharacters
+    };
+    return passwordOptions;
+}   
+
+//
+
 
 
 // Get references to the #generate element
