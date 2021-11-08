@@ -163,7 +163,13 @@ function getPasswordOptions() {
     return passwordOptions;
 }   
 
-//
+//Function for getting random element from arrays
+function getRandom(arr) {
+    var randIndex = Math.floor(Math.random() * arr.length);
+    var randElement = arr[randIndex];
+
+    return randElement;
+}
 
 
 
