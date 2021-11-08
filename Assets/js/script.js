@@ -1,10 +1,5 @@
 // Assignment code here
-  // Function to prompt user for password options
-  function getPasswordOptions() {
-    // Variable to store length of password from user input
-    var length = parseInt(
-      prompt('How many characters would you like your password to contain?')
-    );// Array of special characters to be included in password
+// Array of special characters to be included in password
 var specialCharacters = [
     '@',
     '%',
@@ -93,6 +88,16 @@ var specialCharacters = [
     'Y',
     'Z'
   ];
+
+// Function to prompt user for password options
+function getPasswordOptions() {
+    // Variable to store length of password from user input
+    var length = parseInt(
+      prompt('How many characters would you like your password to contain?')
+    );
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
